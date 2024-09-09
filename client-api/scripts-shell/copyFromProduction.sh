@@ -32,10 +32,12 @@ psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -p ${POSTGRES_PORT} -d ${DB} -c "${
 
 # Remove all degradation alerts from current table
 DEL="DELETE FROM public.deter_current WHERE class_name='cicatriz de queimada';"
-psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -p ${POSTGRES_PORT} -d ${DB} -c "${DEL}"
+#psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -p ${POSTGRES_PORT} -d ${DB} -c "${DEL}"
+# join DELETE and INSERT SQLs to use same transaction and avoid deletion without reinsertion
+COPY="${DEL} "
 
 # using SQL View through DBLink to copy degradation alerts (only audited data)
-COPY="INSERT INTO public.deter_current( "
+COPY="${COPY} INSERT INTO public.deter_current( "
 COPY="${COPY} geom, class_name, area_km, view_date, create_date, audit_date, sensor, satellite, path_row, object_id) "
 COPY="${COPY} SELECT ST_Multi(spatial_data), class_name, (ST_Area(spatial_data::geography)/1000000) as area_km, view_date, "
 COPY="${COPY} created_date, audited_date, sensor, satellite, path_row, object_id "
