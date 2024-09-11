@@ -4,6 +4,10 @@
 echo "Copy the degradations to accumulation table for ${PROJECT_NAME}"
 echo "-----------------------------------------------------------"
 
+# Import functions ===========================================
+. ${SCRIPTS_BASE_PATH}/functions.lib.sh
+# ============================================================
+
 # get global env vars from Docker Secrets
 export POSTGRES_USER=$(cat "$POSTGRES_USER_FILE")
 export POSTGRES_PASS=$(cat "$POSTGRES_PASS_FILE")
@@ -13,7 +17,7 @@ HOST=$POSTGRES_HOST
 USER=$POSTGRES_USER
 PASS=$POSTGRES_PASS
 
-DB="DETER-B"
+DB=$(getDBName $PROJECT_NAME)
 
 LIST_COLUMNS="origin_gid, classname, quadrant, orbitpoint, date, date_audit, lot, sensor, satellite, areatotalkm, areamunkm, areauckm, county, uf, uc, geom, publish_month"
 

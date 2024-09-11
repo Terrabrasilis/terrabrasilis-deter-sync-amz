@@ -5,7 +5,7 @@
 getDBName(){
   PROJECT_NAME=$1
 
-  case $PROJECT_NAME in "deter-amz") echo "DETER-B";;
+  case $PROJECT_NAME in "deter-amz") echo "deter_amazonia_nb";;
   "deter-cerrado") echo "deter_cerrado";;
   "deter-cerrado-nb") echo "deter_cerrado_nb";;
   "dashboard-fires") echo "fires_dashboard";;
