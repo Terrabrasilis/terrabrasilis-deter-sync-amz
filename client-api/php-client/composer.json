@@ -1,6 +1,6 @@
 {
     "name": "deter-b-sync-data-client",
-    "description": "A Web client to read data from DETER-B Sync Service and store on local PostgreSQL database.",
+    "description": "A Web client to read data from deter_amazonia_nb Sync Service and store on local PostgreSQL database.",
     "type": "project",
     "license": "GPL",
     "authors": [

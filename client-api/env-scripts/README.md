@@ -2,7 +2,7 @@
 
 There are two tasks here. A task to update the DETER release date every Friday and another to generate files like JSONs and Shapefiles every day. These files are delivery by one authentication-verified API called [file-delivery](https://github.com/Terrabrasilis/file-delivery).
 
-Defines the environment to run the shell scripts used for produce JSON and shapefiles after the data daily synchron of the DETER-B Project for Amazon and Cerrado Biomes. The files Json and Shapefile will be used by analysis dashboards and the default download tool at TerraBrasilis.
+Defines the environment to run the shell scripts used for produce JSON and shapefiles after the data daily synchron of the deter_amazonia_nb Project for Amazon and Cerrado Biomes. The files Json and Shapefile will be used by analysis dashboards and the default download tool at TerraBrasilis.
 
 The scripts used here, depends of the environment variables but when this scripts runs inside a task based in crontab the environment variables was unreachable.
 So we use one technique that consist to write the environment variables inside a file and read that file when the scripts triggered by cron. See in the Dockerfile the session where we writing the /etc/environment.
@@ -55,7 +55,7 @@ echo "user_pass" |docker secret create postgres.pass.geoserver -
 
 *Needs rebuild Docker Image
 
-This scripts needs the pre-defined names for databases and the layers in geoserver. So, if you want or need to change the default database for DETER-B AMZ or Cerrado, you need to changes this scripts as well.
+This scripts needs the pre-defined names for databases and the layers in geoserver. So, if you want or need to change the default database for deter_amazonia_nb AMZ or Cerrado, you need to changes this scripts as well.
 
 ## Build the docker
 

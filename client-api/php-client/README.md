@@ -1,6 +1,6 @@
 # Client API - deter-b-sync-data-client
 
-Using the PHP with cURL over DETER-B service API to create a client that synchronize data.
+Using the PHP with cURL over deter_amazonia_nb service API to create a client that synchronize data.
 Additionally, we implement one script to check status of synchronize process and send email to admin.
 
 **Full run environment was build in Docker. See env-php directory.**
@@ -70,7 +70,7 @@ crontab -e
 
 Example of the crontab fragment:
 ```
-# Tasks to syncronize and check state of the last syncronize for DETER-B project
+# Tasks to syncronize and check state of the last syncronize for deter_amazonia_nb project
 45 23 * * * /usr/bin/php /your/instalation/path/index.php
 10 0 * * * /usr/bin/php /your/instalation/path/checkStatus.php
 ```

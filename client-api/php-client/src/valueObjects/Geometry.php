@@ -5,7 +5,7 @@ namespace ValueObjects;
 use Configuration\ServiceConfiguration;
 
 /**
- * Used to represents the polygons of one registry of the DETER-B detections.
+ * Used to represents the polygons of one registry of the deter_amazonia_nb detections.
  *
  * Uses the GeoJSON pattern.
  * - https://tools.ietf.org/html/rfc7946

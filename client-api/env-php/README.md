@@ -38,7 +38,7 @@ echo "pg_pass" |docker secret create postgres.pass.geoserver -
 
 *Needs rebuild Docker Image
 
-This software needs the pre-defined names for database and table. So, if you want or need to change the default database or table for DETER-B AMZ, you need to changes this code as well.
+This software needs the pre-defined names for database and table. So, if you want or need to change the default database or table for deter_amazonia_nb, you need to changes this code as well.
 
 ## Build the docker
 
