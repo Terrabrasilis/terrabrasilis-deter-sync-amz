@@ -31,8 +31,8 @@ OUTPUT_COLUMNS="fid, uuid::varchar, class_name, area_km, view_date, audit_date, 
 
 DB=$(getDBName $PROJECT_NAME)
 
-FILTER_AUTH="0.00"
-FILTER_PUBLIC="0.00"
+FILTER_AUTH="0.03"
+FILTER_PUBLIC="0.03"
 
 QUERY_FILTER_AUTH="area_km >= ${FILTER_AUTH}"
 QUERY_FILTER_PUBLIC="view_date <= (SELECT date FROM public.deter_publish_date) AND area_km >= ${FILTER_PUBLIC}"
