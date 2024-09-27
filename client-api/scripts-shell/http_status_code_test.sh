@@ -22,7 +22,7 @@ assert_same() {
 }
 
 fetch() {
-    curl_out=`curl -s -w "%{http_code}" -o /dev/null $url $args`
+    curl_out=`curl -k -s -w "%{http_code}" -o /dev/null $url $args`
     http_code=`echo "$curl_out" | cut -f1`
 
     return 0

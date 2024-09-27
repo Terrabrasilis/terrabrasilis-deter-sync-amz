@@ -33,7 +33,6 @@ COPY="${COPY} geom, class_name, area_km, view_date, create_date, audit_date, sen
 COPY="${COPY} SELECT ST_Multi(spatial_data), class_name, (ST_Area(spatial_data::geography)/1000000) as area_km, view_date, "
 COPY="${COPY} created_date, audited_date, sensor, satellite, path_row, object_id "
 COPY="${COPY} FROM public.deter_prod_deg_current WHERE view_date >= (SELECT end_date FROM public.prodes_reference) "
-COPY="${COPY} ${LAZY_LOAD}"
 COPY="${COPY} AND audited_date IS NOT NULL;"
 psql -h ${POSTGRES_HOST} -U ${POSTGRES_USER} -p ${POSTGRES_PORT} -d ${DB} -c "${COPY}"
 
